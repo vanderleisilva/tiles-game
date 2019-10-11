@@ -1,22 +1,25 @@
-.App {
-  text-align: center;
+.game{
+  margin: 16px 0;
 }
 
-.App-logo {
-  height: 40vmin;
+.game td {
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  line-height: 40px;
+  border: solid 2px white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.game td.origin {
+  border: solid 2px;
 }
 
-.App-link {
-  color: #09d3ac;
+.game td.R {
+  background-color: red;
+}
+.game td.B {
+  background-color: blue;
+}
+.game td.Y {
+  background-color: yellow;
 }
