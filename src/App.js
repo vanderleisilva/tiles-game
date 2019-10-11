@@ -39,8 +39,8 @@ export default () => {
           <p class="help">Number of lines</p>
         </p>
         <p class="control">
-          <button disabled={start} onClick={startGame} class="button is-info">
-            Start
+          <button onClick={startGame} class="button is-info">
+            {start ? "Restart" : "Start"}
           </button>
         </p>
       </div>
@@ -52,7 +52,7 @@ export default () => {
                 <tr>
                   {l.map(c => (
                     <td className={c.color + (c.origin ? " origin" : "")}>
-                      {c.color}
+                      <div>{c.color}</div>
                     </td>
                   ))}
                 </tr>
