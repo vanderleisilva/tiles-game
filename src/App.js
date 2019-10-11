@@ -1,6 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { createMap, setOrigin } from "./game/tiles";
 import Container from "./container";
+import SelectColors, { initialSelection } from "./colors";
+import Select from "react-select";
 
 export default () => {
   const [columns, setColumns] = useState(6);
@@ -8,14 +10,17 @@ export default () => {
   const [start, setStart] = useState(false);
   const [square, setSquare] = useState([]);
   const [color, setColor] = useState("");
+  const [squareColors, setSquareColos] = useState(initialSelection);
 
   const startGame = () => {
     setStart(true);
-    setSquare(createMap(columns, lines));
+    console.log(squareColors);
+    setSquare(createMap(columns, lines, squareColors.map(i => i.value)));
   };
 
   return (
     <Container>
+      <SelectColors onChange={setSquareColos} />
       <div class="field is-grouped">
         <p class="control">
           <input
@@ -51,8 +56,11 @@ export default () => {
               {square.map(l => (
                 <tr>
                   {l.map(c => (
-                    <td className={c.color + (c.origin ? " origin" : "")}>
-                      <div>{c.color}</div>
+                    <td
+                      style={{ backgroundColor: c.color }}
+                      className={c.origin ? " origin" : ""}
+                    >
+                      <div></div>
                     </td>
                   ))}
                 </tr>
@@ -61,12 +69,9 @@ export default () => {
           </table>
           <div class="field is-grouped">
             <p class="control">
-              <input
-                class="input"
-                value={color}
-                onChange={e => setColor(e.target.value)}
-                type="text"
-                placeholder="Columns"
+              <Select
+                options={squareColors}
+                onChange={e => setColor(e.value)}
               />
               <p class="help">Inform the next color</p>
             </p>

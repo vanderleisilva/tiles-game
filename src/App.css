@@ -4,24 +4,10 @@
 
 .game td div {
   border: solid 2px white;
-}
-.game td {
   width: 40px;
   height: 40px;
-  text-align: center !important;
-  line-height: 40px;
 }
 
 .game td.origin div {
   border: solid 2px;
-}
-
-.game td.R div {
-  background-color: red;
-}
-.game td.B div {
-  background-color: blue;
-}
-.game td.Y div {
-  background-color: yellow;
 }

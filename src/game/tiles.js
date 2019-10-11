@@ -1,6 +1,4 @@
-var colors = ["B", "R", "Y"];
-
-const createMap = (columns, lines) =>
+const createMap = (columns, lines, colors) =>
   Array.from({ length: columns }).map((v, l) =>
     Array.from({ length: lines }).map((x, c) => ({
       color: colors[Math.floor(Math.random() * colors.length)],
@@ -39,7 +37,7 @@ const setOrigin = (map, color) => {
     }
   }
 
-  return square
+  return square;
 };
 
-export { createMap, setOrigin }
+export { createMap, setOrigin };
