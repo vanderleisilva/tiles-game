@@ -11,31 +11,39 @@ const setOrigin = (map, color) => {
 
   const get = (l, c) => {
     try {
-      return square[l][c].origin;
+      return square[l][c] || {};
     } catch (e) {
       return false;
     }
   };
 
-  const isConnected = (l, c) =>
-    get(l + 1, c) || get(l - 1, c) || get(l, c + 1) || get(l, c - 1);
-
-  const status = (l, c) => {
-    if (square[l][c].origin) {
-      square[l][c].color = color;
-      return;
+  const treeSearch = (l, c) => {
+    if (square[l][c].color === color) {
+      square[l][c].origin = true;
     }
 
-    if (isConnected(l, c) && square[l][c].color === color) {
-      square[l][c].origin = true;
+    if (square[l][c].origin) {
+      square[l][c].color = color;
+    }
+
+    if ((get(l + 1, c).color === color) ^ get(l + 1, c).origin) {
+      treeSearch(l + 1, c);
+    }
+
+    if ((get(l, c + 1).color === color) ^ get(l, c + 1).origin) {
+      treeSearch(l, c + 1);
+    }
+
+    if ((get(l - 1, c).color === color) ^ get(l - 1, c).origin) {
+      treeSearch(l - 1, c);
+    }
+
+    if ((get(l, c - 1).color === color) ^ get(l, c - 1).origin) {
+      treeSearch(l, c - 1);
     }
   };
 
-  for (let l in square) {
-    for (let c in square[l]) {
-      status(l, c);
-    }
-  }
+  treeSearch(0, 0);
 
   return square;
 };
