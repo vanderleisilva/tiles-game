@@ -16,8 +16,12 @@ possible.
 
 [Check here](https://vanderleisilva.github.io/tiles-game/) a live demo and have fun! :)
 
-### technical implementation
+### Technical implementation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 The main idea here is not too much about the project's structure, but mainly about the game logic implementation.
+
+### Further details
+
+This repos is still a work in progress, the ultimate goal is to implement an artificial intelligence in which the player would play against. 
