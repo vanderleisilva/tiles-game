@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,MACE,aACF,CAEA,aACE,qBAAuB,CACvB,UAAW,CACX,WACF,CAEA,oBACE,gBACF","file":"main.e5baa048.chunk.css","sourcesContent":[".game{\n  margin: 16px 0;\n}\n\n.game td div {\n  border: solid 2px white;\n  width: 40px;\n  height: 40px;\n}\n\n.game td.origin div {\n  border: solid 2px;\n}\n"]}
