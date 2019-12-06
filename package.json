@@ -1,7 +1,6 @@
 {
   "name": "tiles-game",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -12,11 +11,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://vanderleisilva.github.io/tiles-game/",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -28,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
